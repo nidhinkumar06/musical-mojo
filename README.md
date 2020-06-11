@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="musicalmojo/src/assets/musicalmojo.jpg" alt="aog" height="105">
+  <img src="musicalmojo/src/assets/musicalmojo.png" alt="aog" height="105">
 </div>
 
 <div align="center">
