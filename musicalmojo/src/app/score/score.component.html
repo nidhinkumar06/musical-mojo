@@ -1,0 +1,24 @@
+<div class="card">
+  <div [hidden]="!imageLoader" class="box shine"></div>
+  <img
+    [hidden]="imageLoader"
+    (load)="this.imageLoader = false"
+    src={{this.imageurl}}
+    class="card-img-top"
+  />
+  <h1 class="counter" [countUp]="score">0</h1>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12 mb-sm-3">
+        <button class="btn btn-warning btn-block" (click)="playAgain()">
+          <i class="fa fa-refresh"></i> Play again
+        </button>
+      </div>
+      <div class="col-lg-6 col-sm-12 mb-sm-3">
+        <button class="btn btn-danger btn-block" (click)="exit()">
+          <i class="fa fa-times"></i> Exit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

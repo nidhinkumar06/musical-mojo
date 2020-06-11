@@ -1,0 +1,61 @@
+.container {
+  width: 100%;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.welcome {
+  color: white;
+}
+
+.splash-container {
+  background-color: #101010;
+  padding-top: 25px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+
+.quiz-text {
+  padding-top: 45px;
+  text-align: center;
+  color: #553d7c;
+}
+
+
+.shine {
+  background: #f6f7f8;
+  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-repeat: no-repeat;
+  background-size: 800px 225px;
+  display: inline-block;
+  position: relative;
+
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: placeholderShimmer;
+  -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes placeholderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+.box {
+  height: 300px;
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,50 @@
+<div class="spalsh-container" *ngIf="showSplashScreen">
+  <div [hidden]="!imageLoader" class="box shine"></div>
+  <img [hidden]="imageLoader"
+       (load)="this.imageLoader = false"
+       src="../../assets/homepage.png"
+       class="center img-fluid" />
+  <h1 class="quiz-text">Musical Mojo</h1>
+  <div class="row justify-content-center">
+    <div class="spinner-grow text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-secondary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-success" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-danger" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-warning" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-info" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow text-dark" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="!showSplashScreen && !showQuestions">
+  <h1 *ngIf="!existingUser" class="font-weight-light" style="color: white">Hi Welcome</h1>
+  <h1 *ngIf="existingUser" class="font-weight-light" style="color: white">Welcome back</h1>
+  <h2 class="font-weight-light" style="color: white">Select your music</h2>
+
+  <app-categories [categories]="categories" (selectedMusic)="musicSelect($event)"></app-categories>
+</div>
+
+<div class="container" *ngIf="showQuestions && !showScore">
+  <h2 class="font-weight-light" style="color: white">{{selectedMusicCategory | titlecase}}</h2>
+
+  <app-questions [currentQuestion]="currentQuestion" (nextQuestion)="nextQuestion($event)" (repeatSong)="repeatSong($event)"></app-questions>
+</div>
+
+<div class="container" *ngIf="showScore">
+  <h2 class="font-weight-light">Score</h2>
+  <app-score [score]="score" (playagain)="playAgain($event)" (Exit)="exit($event)"></app-score>
+</div>

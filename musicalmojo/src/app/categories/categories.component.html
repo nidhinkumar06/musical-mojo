@@ -1,0 +1,12 @@
+<div class="scrolling-wrapper-flexbox" style="height: 400px" >
+  <div *ngFor="let category of categories" >
+    <div class="card card-outline">
+      <div [hidden]="!imageLoader" class="box shine"></div>
+      <img [hidden]="imageLoader" (load)="this.imageLoader = false;" src={{category.url}} class="card-img-top" />
+      <div class="card-body">
+        <h5 class="card-title">{{category.name}}</h5>
+        <button class="btn btn-warning" (click)="musicSelect(category.name)">Play Now</button>
+      </div>
+    </div>
+  </div>
+</div>

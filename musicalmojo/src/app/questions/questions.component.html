@@ -1,0 +1,68 @@
+<div>
+  <div style="padding-top: 15px; padding-bottom: 15px;">
+    <div class="progress-wrapper" (click)="playAudio()">
+      <div class="current" [ngStyle]="getOverlayStyle()">
+        <img *ngIf="isAudioPlaying" class="audio" src="../../assets/music.png" />
+        <img *ngIf="!isAudioPlaying" class="audio" src="../../assets/play.png" />
+      </div>
+      <round-progress
+        [current]="current"
+        [max]="max"
+        [stroke]="stroke"
+        [radius]="radius"
+        [rounded]="rounded"
+        [clockwise]="clockwise"
+        [color]="gradient ? 'url(#gradient)' : color"
+        [background]="background"
+        [duration]="duration"
+        [animation]="animation"
+        [animationDelay]="animationDelay"
+      ></round-progress>
+    </div>
+  </div>
+  <h3 class="card-title">{{ this.currentQuestion.question }}</h3>
+  <div class="row">
+    <div class="col-lg-6 col-sm-12 mb-sm-3">
+      <button
+        class="btn btn-warning btn-block"
+        (click)="checkAnswer(this.currentQuestion.option1, 1)"
+        [disabled]="buttonDisabled"
+      >
+        <span *ngIf="isOption1Loading"> <span class="btn-text">{{ this.currentQuestion.option1  }}</span> &nbsp; <i class="fa fa-spinner fa-spin"></i> </span>
+        <span *ngIf="!isOption1Loading"><span class="btn-text">{{ this.currentQuestion.option1  }}</span></span>
+      </button>
+    </div>
+    <div class="col-lg-6 col-sm-12 mb-sm-3">
+      <button
+        class="btn btn-warning btn-block"
+        (click)="checkAnswer(this.currentQuestion.option2, 2)"
+        [disabled]="buttonDisabled"
+      >
+        <span *ngIf="isOption2Loading"> <span class="btn-text">{{ this.currentQuestion.option2  }}</span> &nbsp; <i class="fa fa-spinner fa-spin"></i> </span>
+        <span *ngIf="!isOption2Loading"><span class="btn-text">{{ this.currentQuestion.option2  }}</span></span>
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-sm-12 mb-sm-3">
+      <button
+        class="btn btn-warning btn-block"
+        (click)="checkAnswer(this.currentQuestion.option3, 3)"
+        [disabled]="buttonDisabled"
+      >
+        <span *ngIf="isOption3Loading"> <span class="btn-text">{{ this.currentQuestion.option3  }}</span> &nbsp; <i class="fa fa-spinner fa-spin"></i> </span>
+        <span *ngIf="!isOption3Loading"><span class="btn-text">{{ this.currentQuestion.option3  }}</span></span>
+      </button>
+    </div>
+    <div class="col-lg-6 col-sm-12 mb-sm-3">
+      <button
+        class="btn btn-warning btn-block"
+        (click)="checkAnswer(this.currentQuestion.option4, 4)"
+        [disabled]="buttonDisabled"
+      >
+        <span *ngIf="isOption4Loading"> <span class="btn-text">{{ this.currentQuestion.option4  }}</span> &nbsp; <i class="fa fa-spinner fa-spin"></i> </span>
+        <span *ngIf="!isOption4Loading"><span class="btn-text">{{ this.currentQuestion.option4  }}</span></span>
+      </button>
+    </div>
+  </div>
+</div>

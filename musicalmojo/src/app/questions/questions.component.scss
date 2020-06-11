@@ -1,0 +1,37 @@
+.btn-padding {
+  padding-bottom: 10px;
+}
+
+.card-title {
+  color: white;
+  padding-bottom: 25px;
+}
+
+@media screen and (max-width: 767px) {
+  .btn {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}
+
+.progress-wrapper {
+  position: relative;
+  margin: 20px auto;
+  font-size: 40px;
+}
+
+.current {
+  position: absolute;
+  color: #bbb;
+  font-weight: 100;
+  line-height: 1;
+}
+
+round-progress {
+  margin: auto;
+}
+
+.audio {
+  width: 120px;
+  height: 120px;
+}
